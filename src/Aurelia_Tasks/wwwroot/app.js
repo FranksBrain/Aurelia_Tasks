@@ -1,7 +1,19 @@
-var App = (function () {
-    function App() {
-        this.message = "Hello from Aureeeeeelia!";
+var Welcome = (function () {
+    function Welcome() {
+        this.heading = 'Welcome to Aurelia!';
+        this.firstName = 'Frank';
+        this.lastName = 'Brain';
     }
-    return App;
+    Object.defineProperty(Welcome.prototype, "fullName", {
+        get: function () {
+            return this.firstName + " " + this.lastName;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Welcome.prototype.submit = function () {
+        alert("Welcome, " + this.fullName + "!");
+    };
+    return Welcome;
 })();
-exports.App = App;
+exports.Welcome = Welcome;

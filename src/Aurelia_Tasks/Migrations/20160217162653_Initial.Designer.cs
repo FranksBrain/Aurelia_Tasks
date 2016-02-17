@@ -8,9 +8,10 @@ using Aurelia_Tasks.Models;
 namespace Aurelia_Tasks.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160217162653_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -85,7 +86,7 @@ namespace Aurelia_Tasks.Migrations
 
                     b.Property<string>("Note");
 
-                    b.Property<int?>("TaskItemTaskItemId");
+                    b.Property<int>("TaskItemId");
 
                     b.HasKey("TaskNoteId");
                 });
@@ -176,7 +177,7 @@ namespace Aurelia_Tasks.Migrations
                 {
                     b.HasOne("Aurelia_Tasks.Models.TaskItem")
                         .WithMany()
-                        .HasForeignKey("TaskItemTaskItemId");
+                        .HasForeignKey("TaskItemId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

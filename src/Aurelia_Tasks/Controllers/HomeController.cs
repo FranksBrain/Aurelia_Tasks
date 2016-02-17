@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace Aurelia_Tasks.Controllers
 {
     public class HomeController : Controller
     {
+        private IApplicationEnvironment _hostingEnvironment;
+
+        public HomeController(IApplicationEnvironment hostingEnvironment)
+        {
+            _hostingEnvironment = hostingEnvironment;
+        }
+
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Aurelia()
         {
             return View();
         }

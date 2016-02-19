@@ -1,0 +1,43 @@
+﻿[
+  {
+    "taskItemId": 1,
+    "description": "Get Lunch",
+    "dueDate": "2016-02-17T00:00:00",
+    "taskNotes": [
+      {
+        "taskNoteId": 1,
+        "note": "There are leftovers at home",
+        "dateEntered": "2016-02-17T00:00:00"
+      },
+      {
+        "taskNoteId": 2,
+        "note": "There is also a subway gift card",
+        "dateEntered": "2016-02-17T00:00:00"
+      }
+    ]
+  },
+  {
+    "taskItemId": 2,
+    "description": "Check Library",
+    "dueDate": "2016-02-18T00:00:00",
+    "taskNotes": [
+      {
+        "taskNoteId": 3,
+        "note": "Looking for Agile book",
+        "dateEntered": "2016-02-17T00:00:00"
+      }
+    ]
+  },
+  {
+    "taskItemId": 3,
+    "description": "Bed Delivery",
+    "dueDate": "2016-03-05T00:00:00",
+    "taskNotes": [
+      {
+        "taskNoteId": 4,
+        "note": "They will bill Amex today",
+        "dateEntered": "2016-02-18T00:00:00"
+      }
+    ]
+  }
+]

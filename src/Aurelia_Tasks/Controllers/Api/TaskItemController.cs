@@ -34,5 +34,12 @@ namespace Aurelia_Tasks.Controllers.Api
             //return Json(results);
 
         }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var taskItem = _repo.GetTaskItemById(id);
+            return new ObjectResult(taskItem);
+        }
     }
 }

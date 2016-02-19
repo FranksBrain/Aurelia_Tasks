@@ -1,0 +1,21 @@
+﻿<template>
+    ${heading}
+
+    <table class="table">
+        <tr>
+            <th>Task</th>
+            <th>Due Date</th>
+            <th>Id</th>
+            <th></th>
+        </tr>
+        <tr repeat.for="task of taskItems">
+            <td>${task.description}</td>
+            <td>${task.dueDate}</td>
+            <td>${task.taskItemId}</td>
+            <td>
+                <!--<a route-href="route: details; params.bind: {id:task.TaskItemid}" class="btn btn-default">Details</a>-->
+                <a route-href="route: edit; params.bind: {id:task.taskItemId}" class="btn btn-default">Edit</a>
+            </td>
+        </tr>
+    </table>
+</template>

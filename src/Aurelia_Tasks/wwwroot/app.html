@@ -1,21 +1,12 @@
 ﻿<template>
-    <section>
-        <h2>${heading}</h2>
+    <require from="lib/bootstrap/dist/css/bootstrap.css"></require>
+    <require from="lib/font-awesome/css/font-awesome.css"></require>
+    <require from="./nav-bar.html"></require>
 
-        <form submit.trigger="submit()">
-            <div>
-                <label>First Name</label>
-                <input type="text" value.bind="firstName" />
-            </div>
-            <div>
-                <label>Last Name</label>
-                <input type="text" value.bind="lastName" />
-            </div>
-            <div>
-                <label>Full Name</label>
-                <p>${fullName}</p>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+    <nav-bar router.bind="router"></nav-bar>
+
+    <div class="page-host">
+        <router-view></router-view>
+    </div>
+
 </template>

@@ -41,5 +41,28 @@ namespace Aurelia_Tasks.Controllers.Api
             var taskItem = _repo.GetTaskItemById(id);
             return new ObjectResult(taskItem);
         }
+
+        [HttpPut]
+        public IActionResult Put([FromBody] TaskItem updatedTaskItem)
+        {
+            if (ModelState.IsValid)
+            {
+                return _repo.UpdateTaskItem(updatedTaskItem);
+            }
+            return HttpBadRequest(ModelState);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] TaskItem newTaskItem)
+        {
+            if (ModelState.IsValid)
+            {
+                _repo.AddTaskItem(newTaskItem);
+                var x = CreatedAtRoute(new { controller = "TaskItem", id = newTaskItem.TaskItemId }, newTaskItem);
+                return x;
+                //return CreatedAtRoute(new { controller = "TaskItems", id = newTaskItem.TaskItemId }, newTaskItem);
+            }
+            return HttpBadRequest(ModelState);
+        }
     }
 }

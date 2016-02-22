@@ -2,8 +2,9 @@
     aurelia.use
            .standardConfiguration()
            .developmentLogging()
-           .plugin("aurelia-validation")
-           .feature("./resources");
+           .plugin("aurelia-validation");
+           //.feature("../resources");
 
-    aurelia.start().then(a => a.setRoot("app", document.body));
+    //aurelia.start().then(a => a.setRoot("app", document.body));
+    aurelia.start().then(a => a.setRoot());
 };

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Data.Entity;
+using Microsoft.AspNet.Mvc;
 
 namespace Aurelia_Tasks.Models
 {
@@ -20,6 +21,7 @@ namespace Aurelia_Tasks.Models
         public void AddTaskItem(TaskItem newTaskItem)
         {
             _context.TaskItems.Add(newTaskItem);
+            _context.SaveChanges();
         }
 
         public IEnumerable<TaskItem> GetAllTaskItems()
@@ -53,6 +55,13 @@ namespace Aurelia_Tasks.Models
         public bool SaveAll()
         {
             return _context.SaveChanges() > 0;
+        }
+
+        public ObjectResult UpdateTaskItem(TaskItem updatedTaskItem)
+        {
+            _context.TaskItems.Attach(updatedTaskItem).State = EntityState.Modified;
+            _context.SaveChanges();
+            return new ObjectResult(updatedTaskItem);
         }
     }
 }

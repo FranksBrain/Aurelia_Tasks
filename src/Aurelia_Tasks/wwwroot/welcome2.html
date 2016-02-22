@@ -1,0 +1,9 @@
+﻿<template>
+    <form role="form" submit.delegate="welcome()" validate.bind="validation">
+        <div class="form-group">
+            <label class="control-label">First Name</label>
+            <input type="text" value.bind="firstName" class="form-control" validate="firstName">
+        </div>
+        <button type="submit" class="btn btn-default" disabled.bind="!validation.result.isValid">Submit</button>
+    </form>
+</template>

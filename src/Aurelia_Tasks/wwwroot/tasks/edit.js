@@ -30,4 +30,15 @@ export class Edit {
             this.taskItem = {};
         }
     }
+
+    save() {
+        this.validation.validate().then(() => {
+            return this.data.save(this.taskItem);
+        }).then(taskItem => {
+            console.log(taskItem);
+            //let url = this.router.generate('details', {id:taskItem.id});
+            let url = this.router.generate('tasks');
+            this.router.navigate(url);
+        });
+    }
 }
